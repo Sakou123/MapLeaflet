@@ -21,6 +21,11 @@
 var map = L.map('map').fitWorld();
 map.locate({setView: true, maxZoom: 16, enableHighAccuracy:true, watch:true});
 let tokenmap = "pk.eyJ1Ijoic2Frb3U2MiIsImEiOiJja3Zua2QyeDk1a2NtMnFva2s1aXc3ZmhlIn0.-D9LQ7_SVd6fD714IOdlRQ"
+
+map.eachLayer(function (layer) {
+    map.removeLayer(layer);
+});
+
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token='+tokenmap, {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
