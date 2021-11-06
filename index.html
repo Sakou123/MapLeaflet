@@ -36,7 +36,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 
 function onLocationFound(e) {
-    var radius = e.accuracy;
+    var radius = e.accuracy / 10;
 
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
